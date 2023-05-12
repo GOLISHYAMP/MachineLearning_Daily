@@ -44,3 +44,13 @@ while True:
 # Release the VideoCapture object and close the windows
 cap.release()
 cv2.destroyAllWindows()
+
+
+################################################# CREATE QR CODE ################################################
+# import cv2
+# import qrcode
+# from PIL import Image
+
+# msg = "In this updated code, the returned values from detectAndDecodeMulti() are assigned to decoded_info, points, and _. We check if decoded_info is a list to determine if any QR codes were detected. If so, we can loop over the detected QR codes and extract the information and corner points."
+# img = qrcode.make(msg)
+# img.show()
