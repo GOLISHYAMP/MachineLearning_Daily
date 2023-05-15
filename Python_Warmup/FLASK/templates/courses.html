@@ -7,5 +7,12 @@
 <body>
     <h1>Welcome to our courses</h1>
     <p>Select our best courses</p>
+    <p>{{context[0]}}</p>
+    {%for i in context[1]:%}
+    <ul><li>{{i}}</li></ul>
+    {%if i == 'ML'%}
+    <p>Free course for all</p>
+    {%endif%}
+    {% endfor %}
 </body>
 </html>
