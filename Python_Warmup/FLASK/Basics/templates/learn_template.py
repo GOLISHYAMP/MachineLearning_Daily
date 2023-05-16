@@ -13,7 +13,7 @@ def courses():
     return render_template('courses.html',context=[content,li])
 
 @app.route("/admin")
-def admin():
+def admin():    
     return redirect('/')
 
 if __name__ == "__main__":
