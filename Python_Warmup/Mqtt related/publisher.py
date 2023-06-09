@@ -2,12 +2,13 @@ import paho.mqtt.client as mqtt
 import time
 import cv2
 import numpy as np
+import base64
 
 
 # MQTT broker configuration
 broker_address = "10.236.76.215"  # Replace with your broker address
 broker_port = 1883  # Default MQTT port
-topic = "home/temperature"
+topic = "camera/live_streaming"
 
 # Create an MQTT client
 client = mqtt.Client()
@@ -42,16 +43,18 @@ while True:
     _, image_bytes = cv2.imencode('.jpg', frame)
     byte_array = np.array(image_bytes).tobytes()
 
+    base64_data = base64.b64encode(byte_array)
+    # base64_string = base64_data.decode('utf-8') 
     # Print the byte array
-    print(byte_array)
+    # print(byte_array)
     # message = str(type(frame))
     # Check for the 'q' key to quit the loop
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-    client.publish(topic, byte_array)
+    client.publish(topic, base64_data)
     # print("Published: " + message)
 
-    time.sleep(1)  # Wait for 5 seconds before publishing the next reading
+    # time.sleep(5)  # Wait for 5 seconds before publishing the next reading
 
 
 # Release the VideoCapture object and close the window
