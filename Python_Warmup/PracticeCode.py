@@ -8,7 +8,7 @@ temp = set(li)
 for i in temp:
     if li.count(i) < 3:
         t = [i]*li.count(i)
-        res.extend(t)
+        res.append(t)
     else:
         res.extend([i,i])
 print(res) 
