@@ -1,0 +1,37 @@
+ul{
+    list-style-type: none;
+}
+b{
+    border: 2cm;
+    border-color: aquamarine;
+    border-width: 1cm;
+}
+
+  /* Table styles */
+  .my-table {
+    width: 100%;
+    border-collapse: collapse;
+    
+  }
+
+  /* Table header styles */
+  .my-table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+    
+
+  }
+
+  /* Table row styles */
+  .my-table tr {
+    border-bottom: 1px solid #ddd;
+  }
+
+  /* Table cell styles */
+  .my-table td {
+    padding: 10px;
+  }
+
+
