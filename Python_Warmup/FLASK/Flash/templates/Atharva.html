@@ -1,0 +1,245 @@
+<html>
+    <head>
+        <title>Atharva college of engineering</title> 
+        <style>
+            body{
+                font-family: sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: rgb(192, 244, 248);
+            }
+            .wrapper{
+               background: url(https://www.atharvacoe.ac.in/wp-content/uploads/banner6.jpg) no-repeat center center ;
+                
+            }
+           
+            .ulorder{
+                float: right;
+                margin: 0;
+                margin-right: 1.9rem;
+            }
+            .liorder{
+                list-style-type: none;
+                display: inline-block;
+            }
+            .aorder{
+                text-decoration: none;
+                color: yellow;
+                font-weight: bold;
+                padding: 20px;
+            }
+            .active{
+                background-color: coral;
+                list-style-type: none;
+                display: inline-block;
+            }
+            img{
+                width: 14%;
+                margin-left: 1.9rem;
+            }
+            .liorder:hover{
+                background-color: coral;
+                color: #000;
+                font-weight: bolder;
+                font-size: 1.2rem;
+                list-style-type: none;
+            }
+            .section{
+                width: 80%;
+                
+                overflow: hidden;
+                margin-top: 4%;
+            }
+            .section h1{
+                color: black;
+                line-height: 30px;
+            }
+            
+            .features{
+                margin-top: 4%;
+                margin-bottom: 2%;
+            }
+            .features button{
+                margin-right: 1rem;
+                font-size: 1.2rem;
+                opacity: 0.7;
+                background-color: orangered;
+                
+            }
+
+            showcase h1{
+                margin-top: 2%;
+                margin-bottom: 2%;
+                text-align: center;
+            }
+            #courses{
+                display:flex;
+                text-align: center;
+            }
+            #courses img{
+                width: 250px;
+                border-radius: 15px;
+                border: 2px solid black;
+            }
+            .apply{
+                margin-top: 4px;
+                background-color: orangered;
+                padding: 0.7rem 1rem;
+                color: #fff;
+                border: none;
+                border-radius: 10px;
+
+            }
+            footer{
+                background-color: #333;
+                color: #fff;
+                text-align: center;
+                padding: 1.2rem;
+                font-size: 20px;
+            }
+
+            .sub-menu1{
+                display: none;
+            }
+            .liorder:hover  .sub-menu1
+            {
+              display: block;
+              position: absolute;
+              background: rgb(94, 94, 233);
+              margin-top: 10px;
+            }
+            .liorder:hover  .sub-menu1 ul{
+                display: block;
+                margin: 5px;
+                color: white;
+            }
+            .liorder:hover  .sub-menu1 ul li{
+                width: 100px;
+                padding: 5px;
+                border-bottom: 1px dotted black;
+                background: transparent;
+                list-style-type: none;
+                color: white;
+                font-size: 15px;
+            }
+            .liorder:hover  .sub-menu1 ul li:last-child{
+                border-bottom: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapper">
+           <!--NAVIGATION-->            
+            <nav>
+               <img src="https://www.atharvacoe.ac.in/wp-content/uploads/logo.png" alt="college logo" class="img">
+               <ul class="ulorder">
+                   <li class="active"><a href="http://www.atharvacoe.ac.in/" class="aorder">HOME</a></li>
+                   <li class="liorder"><a href="#" class="aorder">ABOUT</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="http://www.atharvacoe.ac.in/about-us/" style="text-decoration: none;color: white;">About Atharva</a></li>
+                            <li><a href="http://www.atharvacoe.ac.in/vision-mission/" style="text-decoration: none;color: white;">Vision & Mission</a></li>
+                            <li><a href="http://www.atharvacoe.ac.in/founders-message/" style="text-decoration: none;color: white;">Founder's Message</a></li>
+                        </ul>
+                   </div>                     
+                   </li>                       
+                   <li class="liorder"><a href="#" class="aorder">ADMISSIONS</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="http://www.atharvacoe.ac.in/courses-offered/" style="text-decoration: none;color: white;">Courses offered</a></li>
+                            <li><a href="http://www.atharvacoe.ac.in/fee-structure/" style="text-decoration: none;color: white;">Fee structure</a></li>
+                            <li><a href="http://www.atharvacoe.ac.in/eligibility/" style="text-decoration: none;color: white;">Eligibility</a></li>
+                        </ul>
+                   </div>
+                   </li>
+                   <li class="liorder"><a href="#" class="aorder">ACADEMICS</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="http://www.atharvacoe.ac.in/departments/" style="text-decoration: none;color: white;">Departments</a></li>
+                            <li><a href="http://www.atharvacoe.ac.in/library/" style="text-decoration: none;color: white;">Library</a></li>
+                            <li><a href="http://www.atharvacoe.ac.in/feedback-system/" style="text-decoration: none;color: white;">Scholarship</a></li>
+                        </ul>
+                   </div>
+                   </li>
+                   <li class="liorder"><a href="#" class="aorder">RESEARCH</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="http://www.atharvacoe.ac.in/research-innovations/" style="text-decoration: none;color: white;">Research & Innovation</a></li>
+                            <li><a href="http://www.atharvacoe.ac.in/robotics-lab/" style="text-decoration: none;color: white;">Robotics Lab</a></li>
+                            <li><a href="http://www.atharvacoe.ac.in/startups/" style="text-decoration: none;color: white;">Startups</a></li>
+                        </ul>
+                   </div>
+                   </li>
+                   <li class="liorder"><a href="#" class="aorder">PLACEMENTS</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="http://www.atharvacoe.ac.in/placement-head/" style="text-decoration: none;color: white;">Placement head desk</a></li>
+                            <li><a href="http://www.atharvacoe.ac.in/placements/" style="text-decoration: none;color: white;">Placement</a></li>
+                        </ul>
+                   </div>
+                   </li>
+                   <li class="liorder"><a href="#" class="aorder">ALUMINI</a>
+                    <div class="sub-menu1">
+                        <ul>
+                            <li><a href="http://www.atharvacoe.ac.in/alumini-feedback-3/" style="text-decoration: none;color: white;">Alumini Testimonials</a></li>
+                        </ul>
+                   </div>
+                   </li>
+                   <li class="liorder"><a href="http://www.atharvacoe.ac.in/results/" class="aorder">RESULTS</a></li>
+               </ul>
+            </nav>
+            <!--END OF NAVIGATION-->
+            <!--SECTION-->
+            <div class="section">
+                <h1>WE ENSURE A BETTER EDUCATION <br>FOR A BETTER WORLD</h1>
+                <P style="color: yellow;font-size: 20px;">Atharva delivers on its promise 
+                    of imparting a world class engineering education that prepares the students not 
+                    just for a career but for life.
+                </P>
+                <!--FEATURES-->
+                 <div class="features">
+                     <button>Learn Online Classes</button>
+                     <button>Bridge Courses</button>
+                     <button>Huge Library </button>
+                     <button>Practical Exposure</button>
+                 </div>
+                <!--END OF FEATURES-->            
+            </div>
+            <!--END OF SECTION-->
+
+        </div>
+        <!--END OF WRAPPER-->
+        <!--SHOWCASE-->
+        <showcase>
+            <h1>BEST COURSES WE OFFER</h1>
+            <div id="courses">
+                <div class="CS">
+                    <H3>Computer Engineering</H3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRBXVgA-Lw_KvNOh4CTdyrYSCpgx7Ytw0DSoA&usqp=CAU" alt="computer_engineering logo" width="20%">
+                    <a href="http://www.atharvacoe.ac.in/courses-offered/"><button class="apply">Apply Here</button></a>
+                </div>
+                <div class="IT">
+                    <h3>Information Technology</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtSV0SsZ4Ez3mWTylZ6riuLbwRUbJYAUdD4A&usqp=CAU" alt="IT logo" width="20%" height="170px">
+                    <a href="http://www.atharvacoe.ac.in/courses-offered/"><button class="apply">Apply Here</button></a>
+                </div>
+                <div class="ELEC">
+                    <h3>Electrical Engineering</h3>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdqqtBIEjbqcu-lERvCNyaeho4aSQ0gcKalQ&usqp=CAU" alt="Elec logo" width="20%" height="170px">
+                    <a href="http://www.atharvacoe.ac.in/courses-offered/"><button class="Apply">Apply Here</button></a>
+                </div>
+                <div class="EXTC">
+                    <h3>Electronics & Telecommunication</h3>
+                    <img src="https://edugorilla.com/wp-content/uploads/2018/01/Electronics-Telecommunication-Engineering.jpg" alt="Extc logo" width="20%" height="62%">
+                    <a href="http://www.atharvacoe.ac.in/courses-offered/"><button class="Apply">Apply Here</button></a>
+                </div>
+            </div>
+        </showcase>
+        <!--END OF SHOWCASE-->
+        <footer>
+            <p>Copyright &copy; 2020, coded by GOLI SHYAM</p>
+        </footer>
+
+    </body>
+
+</html>

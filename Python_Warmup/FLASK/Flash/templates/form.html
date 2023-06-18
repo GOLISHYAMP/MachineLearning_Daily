@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename = './app.css') }}">
+    <title>FORM Practice</title>
+</head>
+<body>
+    <form action="#">
+        <label for="uname">UserName</label>
+        <input type="text" name ="username" placeholder="Enter your name" maxlength="10" id = 'uname'>
+        <br><label for="pw">Password</label>
+        <input type="password" name = 'password' id = 'pw'>
+        <br><label for="m">Male</label>
+        <input type="radio" name = "gender" id = 'm'>
+        <label for="f">Female</label>
+        <input type="radio" name = "gender" id = 'f'>
+        <label for="ct">City</label>
+        <select name="City" id="ct">
+            <option value="1">Worli</option>
+            <option value="2">Mulund</option>
+            <option value="3">Bandra</option>
+            
+        </select>
+    </form>
+
+</body>
+</html>

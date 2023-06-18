@@ -6,12 +6,18 @@ app = Flask(__name__)
 # def home():
 #     return render_template("home.html")
 
-@app.route('/')
+@app.route('/login')
 def login():
     diff = 10
     maxi = 100
     return render_template("login.html",context=[diff,maxi])
-#
-#<!-- <progress value={%i%} max="100"></progress> -->
+
+@app.route('/')
+def form():
+    return render_template("form.html")
+
+@app.route('/atharva')
+def atharva():
+    return render_template("Atharva.html")
 if __name__ == '__main__':
     app.run(debug=True)
