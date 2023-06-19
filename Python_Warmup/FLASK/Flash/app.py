@@ -1,4 +1,4 @@
-from flask import Flask, render_template, redirect, url_for, session, flash
+from flask import Flask, render_template, redirect, url_for, session, flash,request
 
 app = Flask(__name__)
 
@@ -19,5 +19,16 @@ def form():
 @app.route('/atharva')
 def atharva():
     return render_template("Atharva.html")
+
+@app.route('/loginpage', methods = ["POST","GET"])
+def loginpage():
+    if request.method == "POST":
+        return "Your successfully logined in"
+    return render_template("loginpage.html")
+
+@app.route('/angel')
+def angel():
+    return render_template("ANGELLIST.html")
+
 if __name__ == '__main__':
     app.run(debug=True)

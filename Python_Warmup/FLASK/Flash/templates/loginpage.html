@@ -2,7 +2,7 @@
 <head>
     <title>login page</title>
     <style>
-        @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
+        /* @import "https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"; */
         body{
             margin: 0;
             padding: 0;
@@ -92,10 +92,10 @@
             <div id="passworderror">*please fill up your password</div>
         </div>
         
-        <input class="btn" type="button" name="" value="sign in" onclick="">
+        <input class="btn" type="submit" name="" value="sign in" onclick="">
         </form>
     </div>
-    <script src="validation.js"></script>
+    <script src="{{ url_for('static', filename='./validation.js') }}"></script>
 </body>
 
 </html>
