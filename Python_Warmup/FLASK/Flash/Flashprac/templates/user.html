@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LOGIN PAGE</title>
+    <title>USER PAGE</title>
 </head>
 <body>
-    <p>This is login page</p>
+    <p>This is a user page</p>
     {% with messages = get_flashed_messages() %}
         {% if messages %}
             {% for msg in messages: %}
@@ -15,11 +15,6 @@
             {% endfor %}
         {% endif %}
     {% endwith %}
-
-    <form action="#" method="post">
-        <input type="text" name="username" id = "uname" placeholder="Enter your name">
-        <input type="password" name = "password" id = 'upwd'>
-        <input type="submit" name = "submit">
-    </form>
+    
 </body>
 </html>
