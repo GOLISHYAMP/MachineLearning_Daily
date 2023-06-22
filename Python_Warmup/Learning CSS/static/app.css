@@ -1,0 +1,44 @@
+#uname,#pwd{
+    border: 5px;
+    border-radius: 10px;
+    border-style:solid;
+    color: green;
+    margin: 10px;
+    text-align: center;
+    text-decoration-color: green;
+    font-size: 20px;
+    background-color: black;
+}
+
+body{
+    background-color: black;
+    background-size: cover;
+
+}
+
+div{
+    border-radius: 10px;
+    display:inline-block;
+    margin-top: 20%;
+    margin-left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+}
+
+.text b{
+    color: green;
+    font-size: 20px;
+    font-style: arial;
+}
+
+h1{
+    color: green !important;    
+}
+
+#loginBtn{
+    border: 5px solid green;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 10px;
+    background-color: rgb(155, 228, 155);
+}

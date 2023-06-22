@@ -4,9 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for("static" , filename = "./app.css") }}">
     <title>LOGIN PAGE</title>
 </head>
 <body>
-    <p>This is login page</p>
+    <div>
+    <h1 class = 'text'><u>LOGIN</u></h1>
+    <form action="login" method="POST">
+        <label class = 'text' for="uname"><b>Username : </b></label>
+        <input  type="text" name = "username" id = 'uname' placeholder="Enter the username" required>
+        <br><label class = 'text' for="pwd"><b>Password : </b></label>
+        <input type="password" name = "password" id = 'pwd' placeholder="Password" required>
+        <br>
+        <input type="submit" name = "Login" id = "loginBtn">
+    </form>
+</div>
 </body>
 </html>
