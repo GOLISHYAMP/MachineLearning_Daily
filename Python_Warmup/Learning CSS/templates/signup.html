@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static',filename = './app.css') }}">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1 class = 'text'><u>SIGNUP</u></h1>
+    
+    <form action="#", method="post">
+        <label class = 'text' for="uname"><b>Username : </b></label>
+        <input type="text" name="username" id = 'uname'  placeholder="Enter the username" required/>
+        <br>
+        <label class = 'text' for="pwd"><b>Password : </b></label>
+        <input type="password" name="password" placeholder="Enter your password" id = 'pwd'required/>
+    <br><input value="signup" type="submit" id = 'signBtn' name="submit" >
+    </div>
+</form>
+</body>
+</html>

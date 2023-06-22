@@ -1,8 +1,11 @@
-import logging
+
+import timeit
 
 # Configure the logging
+code_snip = '''
+import logging
 logging.basicConfig(
-    level=logging.DEBUG,
+    level=logging.WARNING,
     format='%(asctime)s [%(levelname)s] %(message)s',
     handlers=[
         logging.StreamHandler()
@@ -40,7 +43,7 @@ for i in range(5):
 
 # Log messages from different modules
 logger = logging.getLogger('custom')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.WARNING)
 logger.addHandler(logging.StreamHandler())
 
 logger.info('This is a custom log message')
@@ -52,9 +55,14 @@ handler = logging.StreamHandler()
 handler.setFormatter(formatter)
 
 logger = logging.getLogger('custom2')
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.WARNING)
 logger.addHandler(handler)
 
 logger.debug('This is a custom debug message')
 logger.info('This is a custom info message')
 logger.error('This is a custom error message')
+'''
+
+execution_time = timeit.timeit(code_snip,number=1)
+
+print(f"The time took for execution using default logging is : {round(execution_time,5)}")

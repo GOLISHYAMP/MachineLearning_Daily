@@ -1,3 +1,6 @@
+import timeit
+
+code_snip = '''
 from loguru import logger
 
 # Configure the logging
@@ -39,8 +42,12 @@ logger.warning('This is a custom warning message')
 # Log messages with custom formatting
 # logger.add(lambda msg: print(msg, end=''), format="{level} {message}")
 
-logger.level("DEBUG")
+logger.level("WARNING")
 
 logger.debug('This is a custom debug message')
 logger.info('This is a custom info message')
 logger.error('This is a custom error message')
+'''
+
+execution_time = timeit.timeit(code_snip, number=100)
+print(f"Time took for execution using loguru is {round(execution_time,5)} ")
