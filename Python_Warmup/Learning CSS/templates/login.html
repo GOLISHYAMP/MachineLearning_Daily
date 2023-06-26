@@ -10,10 +10,14 @@
 <body>
     <div>
     <h1 class = 'text'><u>LOGIN</u></h1>
-    <form action="login" method="POST">
+    <form action="/login" method="POST">
         <label class = 'text' for="uname"><b>Username : </b></label>
         <input  type="text" name = "username" id = 'uname' placeholder="Enter the username" required>
-        <br><label class = 'text' for="pwd"><b>Password : </b></label>
+        <br>
+        <label class = 'text' for="email"><b>Email : </b></label>
+        <input type="text" name="Email" id = 'email' placeholder="Email" required>
+        <br>
+        <label class = 'text' for="pwd"><b>Password : </b></label>
         <input type="password" name = "password" id = 'pwd' placeholder="Password" required>
         <br>
         <input type="submit" name = "Login" id = "loginBtn">
