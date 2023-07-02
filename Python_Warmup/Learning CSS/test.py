@@ -1,78 +1,65 @@
-from flask import Flask, render_template, request, session, redirect,jsonify
-import requests,json
-from keycloak import KeycloakOpenID, KeycloakAdmin
+from flask import Flask, redirect, request, url_for
+from keycloak import KeycloakOpenID, KeycloakAdmin, KeycloakOpenIDConnection
 
 app = Flask(__name__)
 app.secret_key = 'SHYAM'  # Set a secret key for session management
 
-# keycloak_openid = KeycloakOpenID(server_url="http://localhost:8080/admin/",
-#                                  client_id="oidc_flaskapp",
-#                                  realm_name="firstRealm",
-#                                  client_secret_key="VXhreHA0d4Zf3jKu5wcZ3cnaGAkcB1N1")
+KEYCLOAK_SERVER_URL = 'http://localhost:8080/admin/realms/'
+REALM_NAME = 'firstRealm'
+CLIENT_ID = 'oidc_flaskapp'
+CLIENT_SECRET = 'VXhreHA0d4Zf3jKu5wcZ3cnaGAkcB1N1'
+CALLBACK_URL = 'http://localhost:5000/callback'
+
+@app.route('/', methods=["GET"])
+def index():
+    keycloak_openid = KeycloakOpenID(server_url=KEYCLOAK_SERVER_URL,
+                                     client_id=CLIENT_ID,
+                                     realm_name=REALM_NAME,
+                                     client_secret_key=CLIENT_SECRET)
+
+    auth_url = keycloak_openid.auth_url(redirect_uri=CALLBACK_URL,
+                                        scope="email",
+                                        state="your_state_info")
+    return redirect(auth_url)
 
 
-# keycloak_admin = KeycloakAdmin(server_url="http://localhost:8080/admin/realms/firstRealm/users",
-#                               username="shyam,",
-#                               password="Shyam",
-#                               realm_name="firstRealm",
-#                               client_id="oidc_flaskapp",
-#                               client_secret_key="VXhreHA0d4Zf3jKu5wcZ3cnaGAkcB1N1",
-#                               verify=True)
+@app.route('/callback', methods=["GET"])
+def callback():
+    code = request.args.get('code')
+    keycloak_openid = KeycloakOpenID(server_url=KEYCLOAK_SERVER_URL,
+                                     client_id=CLIENT_ID,
+                                     realm_name=REALM_NAME,
+                                     client_secret_key=CLIENT_SECRET)
 
+    token = keycloak_openid.token(code, redirect_uri=CALLBACK_URL)
+    keycloak_connection = KeycloakOpenIDConnection(server_url=KEYCLOAK_SERVER_URL,
+                                                  client_id=CLIENT_ID,
+                                                  realm_name=REALM_NAME,
+                                                  client_secret_key=CLIENT_SECRET,
+                                                  verify=True,
+                                                  refresh_token=token['refresh_token'])
 
-# print('Retrieving Access token from Keycloak')
+    keycloak_admin = KeycloakAdmin(connection=keycloak_connection)
 
-
-
-# @app.route('/')
-# def test():
-#     user = {
-#     "username":"testuser",
-#     "email":"testuser@example.com",
-#     "credentials": [{"value": "password","type": "password"}],
-#     "enabled":True
-# }
-#     create_user_response = keycloak_admin.create_user(payload= user,exist_ok=False)
-#     return f"User created: {create_user_response['id']}"
-
-@app.route('/')
-def test():
-    accessTokenUrl = "http://localhost:8080/realms/firstRealm/protocol/openid-connect/token"
-
-
-    #update the admin credential for your keycloak instance
-    username='shyam'
-    password='Shyam'
-    audience = 'oidc_flaskapp'
-    payload='client_id=admin-cli&username='+username+'&password='+password+'&grant_type=password'+'&audience='+audience
-
-    headers = {
-    'Content-Type': 'application/x-www-form-urlencoded'
+    username = "james"
+    password = "James"
+    email = "james@gmail.com"
+    user = {
+        "username": username,
+        "enabled": True,
+        "emailVerified": True,
+        "email": email,
+        "credentials": [
+            {
+                "type": "password",
+                "value": password
+            }
+        ]
     }
-    response = requests.request("POST", accessTokenUrl, headers=headers, data=payload)
 
-    access_token=json.loads(response.text)['access_token']
-    print(access_token)
-    addUserUrl = "http://localhost:8080/admin/realms/firstRealm/users"
-    payload={
-    "username":"usertest",
-    "credentials": [{"value": "password","type": "password"}],
-    "email":"usertest@gmail.com",
-    "enabled":True
-    }
-    payload = jsonify(payload)
-    print(payload)
-    headers = {
-        'Authorization': 'Bearer '+access_token+'',
-        'Content-Type': 'application/json'
-                }
+    create_user_response = keycloak_admin.create_user(payload=user, exist_ok=False)
+    return f"User created: {create_user_response['id']}"
 
-    response = requests.request("POST", addUserUrl, headers=headers, data=payload)
-    print(response)
-    if (response.status_code==201):
-        print(payload['username'] + ' user added successfully')
-    elif (response.status_code==409):
-        print(payload['username'] + ' already exist in the Keycloak')
 
 if __name__ == "__main__":
     app.run(debug=True)

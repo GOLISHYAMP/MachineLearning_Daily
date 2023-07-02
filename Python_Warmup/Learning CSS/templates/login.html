@@ -8,6 +8,13 @@
     <title>LOGIN PAGE</title>
 </head>
 <body>
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages: %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <div>
     <h1 class = 'text'><u>LOGIN</u></h1>
     <form action="/login" method="POST">

@@ -32,6 +32,7 @@ keycloak_openid = KeycloakOpenID(server_url="http://localhost:8080/admin/",
 #     redirect_uri="your_call_back_url")
 
 
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     if request.method == 'POST':

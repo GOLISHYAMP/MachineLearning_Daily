@@ -10,7 +10,13 @@
 <body>
     <div>
         <h1 class = 'text'><u>SIGNUP</u></h1>
-    
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for msg in messages: %}
+                <p>{{msg}}</p>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
     <form action="/signup", method="post">
         <label class = 'text' for="uname"><b>Username : </b></label>
         <input type="text" name="username" id = 'uname'  placeholder="Enter the username" required/>
