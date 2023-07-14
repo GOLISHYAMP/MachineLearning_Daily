@@ -1,1 +1,0 @@
-C:\\Users\\SPURUSHO\\Desktop\\Machine Learning\\MachineLearning_Daily\\WindSpeedTrend\\Weather.csv
